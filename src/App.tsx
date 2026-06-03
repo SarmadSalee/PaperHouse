@@ -4,8 +4,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import MobileNav from './components/MobileNav';
 import BackToTop from './components/BackToTop';
-import BannerAd from './components/ads/BannerAd';
-import FooterAd from './components/ads/FooterAd';
 import Home from './pages/Home';
 import Browse from './pages/Browse';
 import PaperView from './pages/PaperView';
@@ -20,9 +18,7 @@ function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-gray-900">
       <Navbar />
-      <BannerAd />
       <main className="flex-1 pb-16 md:pb-0">{children}</main>
-      <FooterAd />
       <Footer />
       <MobileNav />
       <BackToTop />
