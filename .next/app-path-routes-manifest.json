@@ -1,15 +1,17 @@
 {
   "/_not-found/page": "/_not-found",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml",
   "/blog/[slug]/page": "/blog/[slug]",
   "/blog/category/[category]/page": "/blog/category/[category]",
-  "/browse/page": "/browse",
   "/blog/page": "/blog",
-  "/page": "/",
   "/paper/[slug]/page": "/paper/[slug]",
+  "/page": "/",
+  "/browse/page": "/browse",
+  "/subject/[name]/page": "/subject/[name]",
   "/request/page": "/request",
   "/search/page": "/search",
-  "/subject/[name]/page": "/subject/[name]",
+  "/subjects/page": "/subjects",
   "/about/page": "/about",
-  "/privacy-policy/page": "/privacy-policy",
-  "/subjects/page": "/subjects"
+  "/privacy-policy/page": "/privacy-policy"
 }
