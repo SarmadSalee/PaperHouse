@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Search, ArrowRight } from 'lucide-react';
+import { useNavigate, Link } from 'react-router-dom';
+import { Search, ArrowRight, ChevronRight, Clock } from 'lucide-react';
 import { SUBJECTS, SUBJECT_EMOJI, papers } from '../data/papers';
+import { blogPosts } from '../data/blogPosts';
 import NativeBannerAd from '../components/ads/NativeBannerAd';
 import RectangleAd from '../components/ads/RectangleAd';
 
@@ -143,6 +144,70 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* From the Blog */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+        <div className="flex items-center justify-between mb-8">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">From the Blog</h2>
+            <p className="text-gray-500 dark:text-gray-400 text-sm">Study tips, board guides, and exam strategies</p>
+          </div>
+          <Link
+            to="/blog"
+            className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-green-600 dark:text-green-400 hover:underline"
+          >
+            View all articles <ChevronRight className="w-4 h-4" />
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {blogPosts.slice(0, 3).map(post => {
+            const catColors: Record<string, string> = {
+              'board-guides': 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
+              'exam-tips': 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
+              'news': 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400',
+              'comparison': 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400',
+            };
+            const catEmojis: Record<string, string> = {
+              'board-guides': '🏨',
+              'exam-tips': '💡',
+              'news': '📰',
+              'comparison': '📊',
+            };
+            return (
+              <Link
+                key={post.slug}
+                to={`/blog/${post.slug}`}
+                className="group block bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-lg hover:border-green-200 dark:hover:border-green-700 transition-all duration-300"
+              >
+                <div className="h-1 bg-gradient-to-r from-green-500 to-emerald-600" />
+                <div className="p-5">
+                  <span className={`inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full mb-3 ${catColors[post.category]}`}>
+                    {catEmojis[post.category]} {post.category.replace('-', ' ')}
+                  </span>
+                  <h3 className="font-bold text-gray-900 dark:text-white group-hover:text-green-700 dark:group-hover:text-green-400 transition-colors text-sm leading-snug mb-2 line-clamp-2">
+                    {post.h1}
+                  </h3>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-2 mb-3">{post.excerpt}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="flex items-center gap-1 text-xs text-gray-400">
+                      <Clock className="w-3 h-3" />{post.readTime} min
+                    </span>
+                    <span className="text-xs font-semibold text-green-600 dark:text-green-400">Read →</span>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+        <div className="mt-6 text-center sm:hidden">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-green-600 dark:text-green-400 hover:underline"
+          >
+            View all articles <ChevronRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
 

@@ -4,6 +4,7 @@ import { Home, BookOpen, Search, File as FileEdit } from 'lucide-react';
 const tabs = [
   { to: '/', icon: Home, label: 'Home', emoji: '🏠' },
   { to: '/browse', icon: BookOpen, label: 'Browse', emoji: '📂' },
+  { to: '/blog', icon: BookOpen, label: 'Blog', emoji: '📝' },
   { to: '/search', icon: Search, label: 'Search', emoji: '🔍' },
   { to: '/request', icon: FileEdit, label: 'Request', emoji: '📬' },
 ];
