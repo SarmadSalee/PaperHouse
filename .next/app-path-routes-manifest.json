@@ -2,14 +2,14 @@
   "/_not-found/page": "/_not-found",
   "/blog/[slug]/page": "/blog/[slug]",
   "/blog/category/[category]/page": "/blog/category/[category]",
-  "/page": "/",
   "/browse/page": "/browse",
   "/blog/page": "/blog",
-  "/search/page": "/search",
+  "/page": "/",
   "/paper/[slug]/page": "/paper/[slug]",
   "/request/page": "/request",
-  "/about/page": "/about",
+  "/search/page": "/search",
   "/subject/[name]/page": "/subject/[name]",
+  "/about/page": "/about",
   "/privacy-policy/page": "/privacy-policy",
   "/subjects/page": "/subjects"
 }
