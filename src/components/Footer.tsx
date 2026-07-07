@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Facebook, Instagram, MessageCircle } from 'lucide-react';
 
 export default function Footer() {
@@ -28,22 +28,22 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm">Quick Links</h4>
             <ul className="space-y-2.5 text-sm">
-              <li><Link to="/" className="hover:text-green-400 transition-colors">Home</Link></li>
-              <li><Link to="/browse" className="hover:text-green-400 transition-colors">Browse Papers</Link></li>
-              <li><Link to="/request" className="hover:text-green-400 transition-colors">Request a Paper</Link></li>
-              <li><Link to="/about" className="hover:text-green-400 transition-colors">About</Link></li>
-              <li><Link to="/privacy-policy" className="hover:text-green-400 transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/" className="hover:text-green-400 transition-colors">Home</Link></li>
+              <li><Link href="/browse" className="hover:text-green-400 transition-colors">Browse Papers</Link></li>
+              <li><Link href="/request" className="hover:text-green-400 transition-colors">Request a Paper</Link></li>
+              <li><Link href="/about" className="hover:text-green-400 transition-colors">About</Link></li>
+              <li><Link href="/privacy-policy" className="hover:text-green-400 transition-colors">Privacy Policy</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm">Blog</h4>
             <ul className="space-y-2.5 text-sm">
-              <li><Link to="/blog" className="hover:text-green-400 transition-colors">All Articles</Link></li>
-              <li><Link to="/blog/category/board-guides" className="hover:text-green-400 transition-colors">Board Guides</Link></li>
-              <li><Link to="/blog/category/exam-tips" className="hover:text-green-400 transition-colors">Exam Tips</Link></li>
-              <li><Link to="/blog/category/news" className="hover:text-green-400 transition-colors">News &amp; Updates</Link></li>
-              <li><Link to="/blog/30-day-study-plan-using-past-papers-matric-fsc" className="hover:text-green-400 transition-colors">30-Day Study Plan</Link></li>
+              <li><Link href="/blog" className="hover:text-green-400 transition-colors">All Articles</Link></li>
+              <li><Link href="/blog/category/board-guides" className="hover:text-green-400 transition-colors">Board Guides</Link></li>
+              <li><Link href="/blog/category/exam-tips" className="hover:text-green-400 transition-colors">Exam Tips</Link></li>
+              <li><Link href="/blog/category/news" className="hover:text-green-400 transition-colors">News &amp; Updates</Link></li>
+              <li><Link href="/blog/30-day-study-plan-using-past-papers-matric-fsc" className="hover:text-green-400 transition-colors">30-Day Study Plan</Link></li>
             </ul>
           </div>
 

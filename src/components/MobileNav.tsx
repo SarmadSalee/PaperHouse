@@ -1,4 +1,7 @@
-import { Link, useLocation } from 'react-router-dom';
+'use client';
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Home, BookOpen, Search, File as FileEdit } from 'lucide-react';
 
 const tabs = [
@@ -10,7 +13,7 @@ const tabs = [
 ];
 
 export default function MobileNav() {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
   return (
     <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 px-2 py-1 safe-area-bottom">
       <div className="flex items-center justify-around">
@@ -19,7 +22,7 @@ export default function MobileNav() {
           return (
             <Link
               key={to}
-              to={to}
+              href={to}
               className={`flex flex-col items-center gap-0.5 px-4 py-1.5 rounded-xl transition-colors ${
                 active ? 'text-green-600' : 'text-gray-400 dark:text-gray-500'
               }`}

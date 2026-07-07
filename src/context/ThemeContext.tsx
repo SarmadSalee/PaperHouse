@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 interface ThemeContextType {
@@ -8,13 +10,15 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType>({ dark: false, toggleDark: () => {} });
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [dark, setDark] = useState(() => {
-    return localStorage.getItem('ph-dark') === 'true';
-  });
+  const [dark, setDark] = useState(false);
+
+  useEffect(() => {
+    setDark(localStorage.getItem('ph-dark') === 'true');
+  }, []);
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', dark);
-    localStorage.setItem('ph-dark', String(dark));
+    try { localStorage.setItem('ph-dark', String(dark)); } catch {}
   }, [dark]);
 
   return (

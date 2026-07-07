@@ -1,0 +1,15 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/blog/[slug]/page": "/blog/[slug]",
+  "/blog/category/[category]/page": "/blog/category/[category]",
+  "/page": "/",
+  "/browse/page": "/browse",
+  "/blog/page": "/blog",
+  "/search/page": "/search",
+  "/paper/[slug]/page": "/paper/[slug]",
+  "/request/page": "/request",
+  "/about/page": "/about",
+  "/subject/[name]/page": "/subject/[name]",
+  "/privacy-policy/page": "/privacy-policy",
+  "/subjects/page": "/subjects"
+}

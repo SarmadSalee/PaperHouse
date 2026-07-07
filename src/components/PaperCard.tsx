@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Paper } from '../types';
 import { SUBJECT_EMOJI } from '../data/papers';
 
@@ -53,7 +53,7 @@ export default function PaperCard({ paper, highlight }: PaperCardProps) {
       </div>
       <div className="px-5 pb-5 pt-0">
         <Link
-          to={`/paper/${paper.slug}`}
+          href={`/paper/${paper.slug}`}
           className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white text-sm font-semibold px-6 py-3 rounded-full transition-colors"
         >
           View Papers →

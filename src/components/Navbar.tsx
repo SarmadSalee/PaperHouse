@@ -1,5 +1,8 @@
+'use client';
+
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X, Moon, Sun, MessageCircle } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -14,13 +17,13 @@ const navLinks = [
 export default function Navbar() {
   const { dark, toggleDark } = useTheme();
   const [open, setOpen] = useState(false);
-  const { pathname } = useLocation();
+  const pathname = usePathname();
 
   return (
     <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2 group">
             <span className="text-2xl">📚</span>
             <div className="flex flex-col leading-none">
               <span className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-green-600 transition-colors">PaperHouse</span>
@@ -32,7 +35,7 @@ export default function Navbar() {
             {navLinks.map(link => (
               <Link
                 key={link.to}
-                to={link.to}
+                href={link.to}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                   pathname === link.to
                     ? 'bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400'
@@ -77,7 +80,7 @@ export default function Navbar() {
           {navLinks.map(link => (
             <Link
               key={link.to}
-              to={link.to}
+              href={link.to}
               onClick={() => setOpen(false)}
               className={`block px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                 pathname === link.to
